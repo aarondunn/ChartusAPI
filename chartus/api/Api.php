@@ -10,7 +10,7 @@ require_once(dirname(__FILE__) . '/ApiInterface.php');
  */
 class Api {
 	
-	const API_URL = 'http://chartus.local/api';
+	const API_URL = 'https://chartus.org/api';
 	const POST_AUTH_TOKEN_KEY = 'auth_token';
 	const POST_ACTION_KEY = 'action';
 	const AUTH_TOKEN_RESPONSE_KEY = 'auth_token';
