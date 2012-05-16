@@ -10,7 +10,7 @@ require_once(dirname(__FILE__) . '/ApiInterface.php');
  */
 class Api {
 	
-	const API_URL = 'https://chartus.org/api';
+	const API_URL = 'http://chartus.org/api';
 	const POST_AUTH_TOKEN_KEY = 'auth_token';
 	const POST_ACTION_KEY = 'action';
 	const AUTH_TOKEN_RESPONSE_KEY = 'auth_token';
@@ -46,7 +46,7 @@ class Api {
 	 */
 	public function authenticate() {
 		$response = $this->call(
-			\chartus\api\ApiInterface::METHOD_AUTHENTICATE,
+			\chartus\api\ApiInterface::ACTION_AUTHENTICATE,
 			array(
 				'login'=>$this->login,
 				'password'=>$this->password,
@@ -123,6 +123,7 @@ class Api {
 			CURLOPT_TIMEOUT => self::API_CALL_TIMEOUT,
 			CURLOPT_CONNECTTIMEOUT => self::API_CONNECTION_TIMEOUT,
 			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_FRESH_CONNECT => true,
 			CURLOPT_POST => true,
 		);
 	}

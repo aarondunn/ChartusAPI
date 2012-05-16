@@ -6,6 +6,6 @@ namespace chartus\api;
  * @author f0t0n
  */
 interface ApiInterface {
-	const METHOD_AUTHENTICATE = 'getAuthToken';
-	const METHOD_TEST = 'test';
+	const ACTION_AUTHENTICATE = 'getAuthToken';
+	const ACTION_TEST = 'test';
 }

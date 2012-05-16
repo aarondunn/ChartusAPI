@@ -7,7 +7,7 @@ $password = '<CHARTUS_PASSWORD>';
 $api = new \chartus\api\Api($login, $password);
 try {
 	$api->authenticate();
-	$response = $api->call(\chartus\api\ApiInterface::METHOD_TEST, array(
+	$response = $api->call(\chartus\api\ApiInterface::ACTION_TEST, array(
 		'name'=>'Jimmy',
 		'surname'=>'Winter',
 		'nickname'=>'jinteR',
