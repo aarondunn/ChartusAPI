@@ -15,12 +15,16 @@ You can use, modify or extend provided Chartus API Client example, e.g. by addin
 
 ## Chartus API requests ##
 
-1. getUserBooks - The action providing the user's books.
+1. getMyBooks - The action providing the user's books.
 	Parameters:
-	    $userID - user ID.
 		$limit - how much books should be in a chunk (max. allowed value is 10).
 		$offset - the offset from where count the books amount
 			(can't be greater than the total books amount).
+	    $filter(optional) - filter for user books: reading, creating, none.
+            Available values:
+                0 - none (by default)
+                1 - reading
+                2 - creating
 	For example, if the user has 30 books, you can retrieve the books from 5 to 15 by calling
 	getMyBooks action with $limit = 10 and $offset = 5.
 
