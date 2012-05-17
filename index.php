@@ -16,4 +16,3 @@ try {
 } catch(\chartus\api\ApiException $ex) {
 	echo 'An error occured: ', $ex->getMessage();
 }
-//test
