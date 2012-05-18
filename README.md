@@ -31,7 +31,28 @@ You can use, modify or extend provided Chartus API Client example, e.g. by addin
     The API response contains an array of "Book" objects.
         The response example:
         [
-            {"id": 42, "title": "Some Book Title", "description": "Some description"},
-            {"id": 73, "title": "The Title Of Another Book", "description": "Some different description"}
+            {"id": 42, "title": "Some Book Title", "description": "Some description",
+                "genre":{"id":"7","title":"Law","icon":"law.png"}}},
+            {"id": 73, "title": "The Title Of Another Book", "description": "Some different description",
+                "genre":{"id":"7","title":"Law","icon":"law.png"}}}
         ]
 
+2. searchBook - The action performing search in public books
+	Parameters:
+		$limit - how much books should be in a chunk (max. allowed value is 10).
+		$offset - the offset from where count the books amount
+			(can't be greater than the total books amount).
+	    $search_query - search query.
+	Search in book title, description; chapter title, description, content;
+    section title, description, content; author's first and last name
+	For example, if the user has 30 books, you can retrieve the books from 5 to 15 by calling
+	getMyBooks action with $limit = 10 and $offset = 5.
+
+    The API response contains an array of "Book" objects.
+        The response example:
+        [
+            {"id": 42, "title": "Some Book Title", "description": "Some description",
+                "genre":{"id":"7","title":"Law","icon":"law.png"}}},
+            {"id": 73, "title": "The Title Of Another Book", "description": "Some different description",
+                "genre":{"id":"7","title":"Law","icon":"law.png"}}}
+        ]
