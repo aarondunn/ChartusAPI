@@ -14,5 +14,5 @@ try {
 	));
 	echo $response['Hello from ChartusApi'];
 } catch(\chartus\api\ApiException $ex) {
-	echo 'An error occured: ', $ex->getMessage();
+	echo 'An error occurred: ', $ex->getMessage();
 }
