@@ -12,6 +12,13 @@ For example, the POST request to the Chartus API URL using PHP CURL with CURLOPT
 
 You can use, modify or extend provided Chartus API Client example, e.g. by adding new API actions into interface.
 
+----------
+
+API Limitation:
+
+Currently we have limit: 3000 api requests per day for each Chartus user
+
+----------
 
 ## Chartus API requests ##
 
@@ -104,7 +111,7 @@ You can use, modify or extend provided Chartus API Client example, e.g. by addin
                 "genre":{"id":"7","title":"Law","icon":"law.png"}}}
         ]
 
-7. getBook - The action returns book contents by book ID (with list of all chapters and sections).
+7. getBook - The action returns book contents by book ID (with list of all chapters and sections)
 	Parameters:
 	    $id - book ID.
 	To get content of chapters and sections use requests getChapter and getSection
