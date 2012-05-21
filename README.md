@@ -50,7 +50,7 @@ You can use, modify or extend provided Chartus API Client example, e.g. by addin
 
 3. searchBooksCount - The action providing total number of books that match the search query
 	Parameters:
-	    $search_query - search query.
+	    $search_request - search request.
 	Search in book title, description; chapter title, description, content;
     section title, description, content; author's first and last name
 
@@ -63,7 +63,7 @@ You can use, modify or extend provided Chartus API Client example, e.g. by addin
 		$limit - how much books should be in a chunk (max. allowed value is 50).
 		$offset - the offset from where count the books amount
 			(can't be greater than the total books amount).
-	    $search_query - search query.
+	    $search_request - search request.
 	Search in book title, description; chapter title, description, content;
     section title, description, content; author's first and last name
 	For example, if there are 30 results, you can retrieve the books from 5 to 15 by calling

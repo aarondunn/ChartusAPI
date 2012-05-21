@@ -7,11 +7,11 @@ $password = '<CHARTUS_PASSWORD>';
 $api = new \chartus\api\Api($login, $password);
 try {
 	$api->authenticate();
-    $searchQuery = 'test';
+    $searchRequest = 'test';
 
     $resultsCount = $api->call(\chartus\api\ApiInterface::ACTION_SEARCH_BOOKS_COUNT,
         array(
-            'search_query'=>$searchQuery
+            'search_request'=>$searchRequest
       )
     );
 
@@ -19,7 +19,7 @@ try {
         array(
             'limit'=>5,
             'offset'=>0,
-            'search_query'=>$searchQuery
+            'search_request'=>$searchRequest
         )
     );
 
