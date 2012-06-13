@@ -26,6 +26,9 @@ Currently we have limit: 3000 api requests per day for each Chartus user
     Parameters:
         $login - user's login
         $password - user's password
+    The API response contains user's token if user exists and the password is correct.
+        The response example:
+    {"auth_token":"iGM472YCcw6aLP4JWlSukOA10H9y8KzhX6gBjxoDbtrvZRsUEFe35QmqT7VnIdZY"}
 
 2. getMyBooksCount - The action providing total number of the user's books.
     Parameters:
