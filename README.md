@@ -66,8 +66,10 @@ Currently we have limit: 3000 api requests per day for each Chartus user
 4. searchBooksCount - The action providing total number of books that match the search query
 	Parameters:
 	    $search_request - search request.
+        $genre - search by genre ID (all genres can be retrieved using getGenres action).
+
 	Search in book title, description; chapter title, description, content;
-    section title, description, content; author's first and last name
+    section title, description, content; author's first and last name; by genre ID
 
     The API response contains number of user's books that match the search query
         The response example:
@@ -79,8 +81,10 @@ Currently we have limit: 3000 api requests per day for each Chartus user
 		$offset - the offset from where count the books amount
 			(can't be greater than the total books amount).
 	    $search_request - search request.
+	    $genre - search by genre ID (all genres can be retrieved using getGenres action).
+
 	Search in book title, description; chapter title, description, content;
-    section title, description, content; author's first and last name
+    section title, description, content; author's first and last name; by genre ID
 	For example, if there are 30 results, you can retrieve the books from 5 to 15 by calling
 	searchBooks action with $limit = 10 and $offset = 5.
 
@@ -178,9 +182,9 @@ Currently we have limit: 3000 api requests per day for each Chartus user
 13. getSections - The action returns all the book sections
     Parameters:
         $chapter_id - chapter ID
-        $limit - how much chapters should be in a chunk (max. allowed value is 50).
-        $offset - the offset from where count the chapters amount
-            (can't be greater than the total chapters amount).
+        $limit - how much sections should be in a chunk (max. allowed value is 50).
+        $offset - the offset from where count the sections amount
+            (can't be greater than the total sections amount).
         $section_id - parent section ID(optional)
 
     Only parent sections will be returned when $section_id is not specified.
@@ -202,3 +206,20 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         The response example:
         {"id":"122","title":"Testing #2","description":"ppp","content":"Test","position":"1"}
 
+15. getGenres - The action returns all genres
+    Parameters:
+        $limit - how much genres should be in a chunk (max. allowed value is 50).
+        $offset - the offset from where count the genres amount
+            (can't be greater than the total genres amount).
+
+    The API response contains an array of "Genre" objects.
+        The response example:
+        [{"id":"1","title":"Music","icon":"music.png"},{"id":"2","title":"Business","icon":"business.png"}]
+
+16. getGenresCount - The action providing total number of genres
+    Parameters:
+	    no parameters
+
+    The API response contains total number of genres
+            The response example:
+            "30"

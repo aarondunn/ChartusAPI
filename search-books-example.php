@@ -12,7 +12,7 @@ try {
     $resultsCount = $api->call(\chartus\api\ApiInterface::ACTION_SEARCH_BOOKS_COUNT,
         array(
             'search_request'=>$searchRequest
-      )
+        )
     );
 
     $results = $api->call(\chartus\api\ApiInterface::ACTION_SEARCH_BOOKS,
