@@ -21,4 +21,6 @@ interface ApiInterface {
 	const ACTION_GET_SECTIONS_COUNT = 'getSectionsCount';
 	const ACTION_GET_SECTIONS = 'getSections';
 	const ACTION_GET_SECTION = 'getSection';
+    const ACTION_GET_GENRES_COUNT = 'getGenresCount';
+	const ACTION_GET_GENRES = 'getGenres';
 }
