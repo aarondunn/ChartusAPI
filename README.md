@@ -213,8 +213,9 @@ Currently we have limit: 3000 api requests per day for each Chartus user
             (can't be greater than the total genres amount).
 
     The API response contains an array of "Genre" objects.
+    books_count variable contains number of books that belong to that genre.
         The response example:
-        [{"id":"1","title":"Music","icon":"music.png"},{"id":"2","title":"Business","icon":"business.png"}]
+        [{"id":"1","title":"Music","icon":"music.png","books_count":"1"},{"id":"2","title":"Business","icon":"business.png","books_count":"5"}]
 
 16. getGenresCount - The action providing total number of genres
     Parameters:
