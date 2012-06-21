@@ -23,4 +23,5 @@ interface ApiInterface {
 	const ACTION_GET_SECTION = 'getSection';
     const ACTION_GET_GENRES_COUNT = 'getGenresCount';
 	const ACTION_GET_GENRES = 'getGenres';
+	const ACTION_GET_USER = 'getUser';
 }

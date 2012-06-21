@@ -224,3 +224,13 @@ Currently we have limit: 3000 api requests per day for each Chartus user
     The API response contains total number of genres
             The response example:
             "30"
+
+17. getUser - The action returns user details by user ID (or current user if User ID is not specified).
+    Parameters:
+        $id - user ID (optional).
+
+    The API response contains "User" object.
+        The response example:
+        {"id":"110","url_name":"joe-johnes","email":"333@hhh.com","firstname":"Joe","lastname":"Johnes","create_time":"1338587100","occupation_id":"2",
+            "occupation":{"title":"A Graduate Student","id":"2"},"profile":{"image":"http:\/\/chartus_profile.s3.amazonaws.com\/95_111111111111.jpg",
+                "bio":"My bio here","homepage_url":"http:\/\/example.com","facebook_url":"http:\/\/google.com","linkedin_url":"http:\/\/example.com","education":"My edu here","user_id":"110"}}
