@@ -165,7 +165,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
 
     The API response contains "Chapter" object.
         The response example:
-        {"id":"122","title":"Testing #2","description":"ppp","content":"Test","position":"1"}
+        {"id":"122","title":"Testing #2","description":"ppp","content":"Test","position":"1", "sections_count":"10"}
 
 12. getSectionsCount - The action providing total number of sections for specified chapter and parent section(optional)
     Parameters:
@@ -204,7 +204,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
 
     The API response contains "Section" object.
         The response example:
-        {"id":"122","title":"Testing #2","description":"ppp","content":"Test","position":"1"}
+        {"id":"122","title":"Testing #2","description":"ppp","content":"Test","position":"1", "subsections_count":"3"}
 
 15. getGenres - The action returns all genres
     Parameters:
