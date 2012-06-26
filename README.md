@@ -156,8 +156,8 @@ Currently we have limit: 3000 api requests per day for each Chartus user
 
     The API response contains an array of "Chapter" objects.
         The response example:
-        [{"id":"111","title":"First chapter ","description":"Start","position":"1"},
-         {"id":"112","title":"Second chapter ","description":"Start","position":"2"}]
+        [{"id":"111","title":"First chapter ","description":"Start","position":"1", "sections_count":"4"},
+         {"id":"112","title":"Second chapter ","description":"Start","position":"2", "sections_count":"1"}]
 
 11. getChapter - The action returns chapter by chapter ID
     Parameters:
@@ -195,8 +195,8 @@ Currently we have limit: 3000 api requests per day for each Chartus user
 
     The API response contains an array of "Section" objects.
         The response example:
-        [{"id":"111","title":"First chapter ","description":"Start","position":"1"},
-         {"id":"112","title":"Second chapter ","description":"Start","position":"2"}]
+        [{"id":"111","title":"First chapter ","description":"Start","position":"1", "subsections_count":"3"},
+         {"id":"112","title":"Second chapter ","description":"Start","position":"2", "subsections_count":"5"}]
 
 14. getSection - The action returns section by section ID
     Parameters:
