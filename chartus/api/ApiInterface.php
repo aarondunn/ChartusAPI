@@ -6,8 +6,10 @@ namespace chartus\api;
  * @author f0t0n
  */
 interface ApiInterface {
+    const ACTION_TEST = 'test';
 	const ACTION_AUTHENTICATE = 'getAuthToken';
-	const ACTION_TEST = 'test';
+    const ACTION_SIGNUP = 'signup';
+    const ACTION_GET_OCCUPATIONS = 'getOccupations';
 	const ACTION_GET_MY_BOOKS_COUNT = 'getMyBooksCount';
 	const ACTION_GET_MY_BOOKS = 'getMyBooks';
 	const ACTION_SEARCH_BOOKS_COUNT = 'searchBooksCount';

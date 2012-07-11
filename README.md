@@ -30,7 +30,19 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         The response example:
     {"auth_token":"iGM472YCcw6aLP4JWlSukOA10H9y8KzhX6gBjxoDbtrvZRsUEFe35QmqT7VnIdZY"}
 
-2. getMyBooksCount - The action providing total number of the user's books.
+2. signUp - The action registers user
+    Parameters:
+        $first_name - user's first name
+        $last_name - user's last name
+        $email - user's first email
+        $password - user's password
+        $occupation - user's occupation id (list of available occupations can be retrieved
+            using getOccupation request)
+    The API response contains user's token if user created successfully.
+        The response example:
+    {"auth_token":"iGM472YCcw6aLP4JWlSukOA10H9y8KzhX6gBjxoDbtrvZRsUEFe35QmqT7VnIdZY"}
+
+3. getMyBooksCount - The action providing total number of the user's books.
     Parameters:
         $filter(optional) - filter for user books: reading, creating, none.
             Available values:
@@ -41,7 +53,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         The response example:
         "14"
 
-3. getMyBooks - The action providing the user's books.
+4. getMyBooks - The action providing the user's books.
 	Parameters:
 		$limit - how much books should be in a chunk (max. allowed value is 50).
 		$offset - the offset from where count the books amount
@@ -63,7 +75,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
                 "genre":{"id":"7","title":"Law","icon":"law.png"}}}
         ]
 
-4. searchBooksCount - The action providing total number of books that match the search query
+5. searchBooksCount - The action providing total number of books that match the search query
 	Parameters:
 	    $search_request - search request.
         $genre - search by genre ID (all genres can be retrieved using getGenres action).
@@ -75,7 +87,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         The response example:
         "7"
 
-5. searchBooks - The action performing search in public books
+6. searchBooks - The action performing search in public books
 	Parameters:
 		$limit - how much books should be in a chunk (max. allowed value is 50).
 		$offset - the offset from where count the books amount
@@ -97,7 +109,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
                 "genre":{"id":"7","title":"Law","icon":"law.png"}}}
         ]
 
-6. getBooksCount - The action providing total number of public books
+7. getBooksCount - The action providing total number of public books
 	Parameters:
 	    no parameters
 
@@ -105,7 +117,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         The response example:
         "22"
 
-7. getBooks - The action returns all public books
+8. getBooks - The action returns all public books
 	Parameters:
 		$limit - how much books should be in a chunk (max. allowed value is 50).
 		$offset - the offset from where count the books amount
@@ -123,7 +135,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
                 "genre":{"id":"7","title":"Law","icon":"law.png"}}}
         ]
 
-8. getBook - The action returns book contents by book ID (with list of all chapters and sections)
+9. getBook - The action returns book contents by book ID (with list of all chapters and sections)
 	Parameters:
 	    $id - book ID.
 	To get content of chapters and sections use requests getChapter and getSection
@@ -137,7 +149,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
             "genre":{"id":"7","title":"Law","icon":"law.png"}
         }
 
-9. getChaptersCount - The action providing total number of chapters for specified book
+10. getChaptersCount - The action providing total number of chapters for specified book
     Parameters:
         $book_id - book ID
 
@@ -145,7 +157,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
             The response example:
             "34"
 
-10. getChapters - The action returns all the book chapters
+11. getChapters - The action returns all the book chapters
     Parameters:
         $limit - how much chapters should be in a chunk (max. allowed value is 50).
         $offset - the offset from where count the chapters amount
@@ -159,7 +171,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         [{"id":"111","title":"First chapter ","description":"Start","position":"1", "sections_count":"4"},
          {"id":"112","title":"Second chapter ","description":"Start","position":"2", "sections_count":"1"}]
 
-11. getChapter - The action returns chapter by chapter ID
+12. getChapter - The action returns chapter by chapter ID
     Parameters:
         $id - chapter ID.
 
@@ -167,7 +179,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         The response example:
         {"id":"122","title":"Testing #2","description":"ppp","content":"Test","position":"1", "sections_count":"10"}
 
-12. getSectionsCount - The action providing total number of sections for specified chapter and parent section(optional)
+13. getSectionsCount - The action providing total number of sections for specified chapter and parent section(optional)
     Parameters:
         $chapter_id - chapter ID
         $section_id - parent section ID(optional)
@@ -179,7 +191,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
             The response example:
             "3"
 
-13. getSections - The action returns all the book sections
+14. getSections - The action returns all the book sections
     Parameters:
         $chapter_id - chapter ID
         $limit - how much sections should be in a chunk (max. allowed value is 50).
@@ -198,7 +210,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         [{"id":"111","title":"First chapter ","description":"Start","position":"1", "subsections_count":"3"},
          {"id":"112","title":"Second chapter ","description":"Start","position":"2", "subsections_count":"5"}]
 
-14. getSection - The action returns section by section ID
+15. getSection - The action returns section by section ID
     Parameters:
         $id - section ID.
 
@@ -206,7 +218,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         The response example:
         {"id":"122","title":"Testing #2","description":"ppp","content":"Test","position":"1", "subsections_count":"3"}
 
-15. getGenres - The action returns all genres
+16. getGenres - The action returns all genres
     Parameters:
         $limit - how much genres should be in a chunk (max. allowed value is 50).
         $offset - the offset from where count the genres amount
@@ -217,7 +229,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         The response example:
         [{"id":"1","title":"Music","icon":"music.png","books_count":"1"},{"id":"2","title":"Business","icon":"business.png","books_count":"5"}]
 
-16. getGenresCount - The action providing total number of genres
+17. getGenresCount - The action providing total number of genres
     Parameters:
 	    no parameters
 
@@ -225,7 +237,7 @@ Currently we have limit: 3000 api requests per day for each Chartus user
             The response example:
             "30"
 
-17. getUser - The action returns user details by user ID (or current user if User ID is not specified).
+18. getUser - The action returns user details by user ID (or current user if User ID is not specified).
     Parameters:
         $id - user ID (optional).
 
@@ -234,3 +246,11 @@ Currently we have limit: 3000 api requests per day for each Chartus user
         {"id":"110","url_name":"joe-johnes","email":"333@hhh.com","firstname":"Joe","lastname":"Johnes","create_time":"1338587100","occupation_id":"2",
             "occupation":{"title":"A Graduate Student","id":"2"},"profile":{"image":"http:\/\/chartus_profile.s3.amazonaws.com\/95_111111111111.jpg",
                 "bio":"My bio here","homepage_url":"http:\/\/example.com","facebook_url":"http:\/\/google.com","linkedin_url":"http:\/\/example.com","education":"My edu here","user_id":"110"}}
+
+19. getOccupations - The action returns all occupations.
+    Parameters:
+	    no parameters
+
+    The API response contains an array of "Occupation" objects.
+         The response example:
+         [{"id":"1","title":"An Undergraduate Student"},{"id":"2","title":"A Graduate Student"}]
